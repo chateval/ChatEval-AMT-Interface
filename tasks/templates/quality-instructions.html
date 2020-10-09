@@ -8,7 +8,7 @@
 
 <h2>Informed Consent</h2>
 
-<p>This is a linguistic experiment performed at the University of Pennsylvania. If you have any question about this study, feel free to contact Dr. Chris Callison-Burch. Participation in this research is voluntary. You have the right to withdraw from the experiment at any time. The collected data will be used for research purposes only. Personal data will be kept confidential and will not be shared with third parties.</p>
+<p>This is a linguistic experiment performed at the New York University. If you have any question about this study, feel free to contact Dr. Joao Sedoc. Participation in this research is voluntary. You have the right to withdraw from the experiment at any time. The collected data will be used for research purposes only. Personal data will be kept confidential and will not be shared with third parties.</p>
 
 <h2>Instructions</h2>
 
@@ -47,7 +47,7 @@
     <th>5, 3, 1. This is grammatical but does not answer the question or contribute to the conversation.</th>
   </tr>
   <tr>
-    <th>I for work as a teacher.</th>
+    <th>I work as a teacher.</th>
     <th>5, 5, 5. An excellent on-topic response that does not contradict any previous statements.</th>
   </tr>
 
@@ -75,9 +75,9 @@ table {
 <ol>
     {% for prompt in prompts %}
     {% set promptloop = loop %}
-    <li><strong>&nbsp;Conversation: </strong>
+    <li><strong>&nbsp;Prompt: </strong>
     {% for turn in prompt.prompt %}
-        <p>{{ turn }}</p>
+        <p style="font-size:30px;font-family:verdana;color:blue">{{ turn }}</p>
     {% endfor %}
     
     
@@ -85,24 +85,24 @@ table {
     {% for model in prompt.models %}
       {% set modelloop = loop %}
 
-      <hr align="left" width="75%" /> <strong>System {{ modelloop.index }}: {{ model.response }}</strong>
+        <hr align="left" width="75%" /> <strong>System {{ modelloop.index }}: {{ model.response }}</strong>
 
-      <table border="0" cellpadding="0" cellspacing="0" rules="NONE">
+      <table style="width: 700px;" border="0" cellpadding="0" cellspacing="0" rules="NONE">
         <tbody>
           <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td align="center">Least</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td align="center">Most</td>
+            <td style="width: 100px;"  align="center">Least (1) </td>
+            <td style="width: 100px;">&nbsp;</td>
+            <td style="width: 100px;">&nbsp;</td>
+            <td style="width: 100px;">&nbsp;</td>
+            <td style="width: 100px;" align="center">Most (5) </td>
           </tr>
           <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td rowspan="1"><b><font color="#ff0000">Fluency</font></b></td>
+            <td style="text-align: left;" rowspan="1"><b><font color="#ff0000">Fluency</font></b></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Fluency" type="radio" value="1" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Fluency" type="radio" value="2" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Fluency" type="radio" value="3" required/></td>
@@ -112,7 +112,7 @@ table {
           <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td rowspan="1"><b><font color="#ff0000">Coherence</font></b></td>
+            <td style="text-align: left;" rowspan="1"><b><font color="#ff0000">Coherence</font></b></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Coherence" type="radio" value="1" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Coherence" type="radio" value="2" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Coherence" type="radio" value="3" required/></td>
@@ -122,7 +122,7 @@ table {
           <tr>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td rowspan="1"><b><font color="#ff0000">Interestingness</font></b></td>
+            <td style="text-align: left;" rowspan="1"><b><font color="#ff0000">Interestingness</font></b></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Interestingness" type="radio" value="1" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Interestingness" type="radio" value="2" required/></td>
             <td align="center"><input name="{{ model.bot }}{{ promptloop.index }}.Interestingness" type="radio" value="3" required/></td>
@@ -138,7 +138,9 @@ table {
       </table>
 
       {% endfor %}
-  </li> <hr></br>
+  </li> 
+<hr></br></br></br></br></br>
+
     {% endfor %}
 </ol>
 
